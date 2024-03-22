@@ -45,5 +45,5 @@ async def read_root() -> dict:
     return {"message": "Welcome to your todo list."}
 
 @app.get("/api/buildings/snoqualmie")
-async def fetch_users():
-    return db;
+async def fetch_Floors():
+    return {"floors":db};
