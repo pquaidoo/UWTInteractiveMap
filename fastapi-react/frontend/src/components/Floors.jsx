@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
+import Floor from  './Assets/SNOQUALMIE_Floor1.png';
+
 import {
-    Box,
-    Button,
-    Flex,
-    Input,
-    InputGroup,
-    Modal,
-    ModalBody,
-    ModalCloseButton,
-    ModalContent,
-    ModalFooter,
-    ModalHeader,
-    ModalOverlay,
-    Stack,
-    Text,
-    useDisclosure
+  Box,
+  Button,
+  Flex,
+  Input,
+  InputGroup,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Stack,
+  Text,
+  useDisclosure
 } from "@chakra-ui/react";
-
-
 const Floors = () => {
   const [floors, setFloors] = useState([])
   useEffect(() => {
@@ -37,6 +37,7 @@ const Floors = () => {
       <div>
             {floors.map((floor) => (
                 <div key={floor.id}>
+                    <img> src = {Floor} alt = "Floor image" </img>
                     <h2>{`Building: ${floor.building}, Floor Level: ${floor.floor_level}`}</h2>
                     <p>Area: {floor.area}</p>
                     <p>Resources: {floor.resources.join(', ')}</p>
