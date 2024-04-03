@@ -12,7 +12,7 @@ function App() {
       <Floors />
     </ChakraProvider>
   )
-}
+}/home/patrick/Pictures/SNOQUALMIE_Floor1.png
 
 const rootElement = document.getElementById("root")
 render(<App />, rootElement)
