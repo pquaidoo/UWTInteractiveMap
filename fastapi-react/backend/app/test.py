@@ -1,25 +1,25 @@
 from typing import List
 from uuid import uuid4
 from fastapi import FastAPI
-from .models import User, Gender, Role
+from .models import Floor, Building, Hours, CommunityArea
 
 app= FastAPI()
 
-db: List[User] = [
-    User(
-        id=uuid4(), 
-        first_name = "buruk",
-        last_name = "Yimesgen",
-        gender=Gender.female, 
-        roles=[Role.student]
+db: List[Floor] = [
+    Floor(
+        id = uuid4(), 
+        building = Building.Snoqualmie,
+        floor_level = 1,
+        area = CommunityArea.cei,
+        hours = Hours.Sno
     ),
-    User(
-        id=uuid4(), 
-        first_name = "patrick",
-        last_name = "bill",
-        gender=Gender.male, 
-        roles=[Role.admin, Role.user]
-    )
+    Floor(
+        id = uuid4(), 
+        building = Building.Snoqualmie,
+        floor_level = 2,
+        area = CommunityArea.tlc,
+        hours = Hours.Sno
+    )   
 ]
 
 @app.get("/")
@@ -31,7 +31,7 @@ async def root():
 async def fetch_users():
     return db
 
-@app.post("/api/v1/users")
-async def register_user(user: User):
-    db.append(user)
-    return {"id": user.id}  
+# @app.post("/api/v1/users")
+# async def register_user(user: User):
+#     db.append(user)
+#     return {"id": user.id}  
