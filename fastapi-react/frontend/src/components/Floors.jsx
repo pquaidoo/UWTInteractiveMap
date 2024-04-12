@@ -24,7 +24,7 @@ const Floors = () => {
     const fetchFloors = async () => {
       
         const response = await fetch('http://127.0.0.1:9000/api/buildings/snoqualmie');
-        
+        ``
         const data = await response.json();
         setFloors(data.floors || []);
       
@@ -37,12 +37,15 @@ const Floors = () => {
       <div>
             {floors.map((floor) => (
                 <div key={floor.id}>
-                    <img> src = {Floor} alt = "Floor image" </img>
+                    
                     <h2>{`Building: ${floor.building}, Floor Level: ${floor.floor_level}`}</h2>
+                    
                     <p>Area: {floor.area}</p>
                     <p>Resources: {floor.resources.join(', ')}</p>
                 </div>
+                
             ))}
+            <img src = {Floor} alt = "Floor image" width="500" height="600"/>
         </div>
 
   );
