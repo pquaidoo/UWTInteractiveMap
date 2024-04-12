@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Heading, Flex, Divider } from "@chakra-ui/react";
 
 import Button from './Button'; // Adjust the path based on your file structure
 
 const Header = () => {
-  const handleClick = () => {
-    console.log('Button clicked!');
+  const [headerText, setHeaderText] = useState("Header");
+ 
+  const Bathrooms = () => {
+    setHeaderText("Bathrooms");
   };
-  const rip = () => {
-    console.log('Button clicked!');
+  const Microwaves = () => {
+    setHeaderText("Microwaves");
   };
   return (
     <Flex
@@ -20,9 +22,10 @@ const Header = () => {
       bg="gray.400"
     >
       <Flex align="center" mr={5}>
-        <Heading as="h1" size="sm">Header</Heading>
-        <Button label="Click Me" onClick={handleClick} />
-        <Button label="Click Me" onClick={rip} />
+        <Heading as="h1" size="sm" style = {{ padding: '10px 20px'}}> {headerText}</Heading>
+        <Button label="Bathrooms" onClick={Bathrooms} />
+        <Button label="Microwaves" onClick={Microwaves} />
+
         <Divider />
       </Flex>
     </Flex>
