@@ -1,0 +1,9 @@
+.bathrooms {
+  background: rgba(18, 169, 233, 0.5); /* Semi-transparent blue background */
+  color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Cover the entire area of the container */
+  height: 100%;
+}

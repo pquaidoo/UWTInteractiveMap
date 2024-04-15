@@ -1,21 +1,8 @@
-import React from 'react';
+import React from "react";
+import { Button as ChakraButton } from "@chakra-ui/react";
 
-function Button({ label, onClick }) {
-  return <button 
-  onClick={onClick} 
-  style={{
-    padding: '10px 20px', // Adjust padding as needed
-    margin: '5px', // Adjust margin as needed
-    fontSize: '16px', // Adjust font size as needed
-    borderRadius: '5px', // Adjust border radius as needed
-    backgroundColor: 'blue', // Adjust background color as needed
-    color: 'white', // Adjust text color as needed
-    border: 'none', // Remove border
-    cursor: 'pointer', // Show pointer cursor on hover
-  }}
-  >
-    {label} 
-  </button>;
-}
+const Button = ({ label, onClick }) => (
+  <ChakraButton onClick={onClick}>{label}</ChakraButton>
+);
 
 export default Button;
