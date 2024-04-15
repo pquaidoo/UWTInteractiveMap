@@ -8,8 +8,11 @@ export const StyleProvider = ({ children }) => {
   const [className, setClassName] = useState("");
 
   const changeClassName = (newClassName) => {
+    //Means if className equals newClassName then we revert it to be blank.
+    setClassName((currentClassName) =>
+      currentClassName === newClassName ? "" : newClassName
+    );
     console.log(`Changing class name to: ${newClassName}`);
-    setClassName(newClassName);
   };
 
   return (
